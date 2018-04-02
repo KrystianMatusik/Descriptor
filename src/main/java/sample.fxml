@@ -154,13 +154,13 @@
             </TextField>
             <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="100.0" text="Generuj" textAlignment="CENTER">
+                  <Button fx:id="generateButton" mnemonicParsing="false" prefHeight="37.0" prefWidth="100.0" text="Generuj" textAlignment="CENTER">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
                   <Region prefHeight="41.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-                  <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="100.0" text="Wyczyść">
+                  <Button fx:id="clearButton" mnemonicParsing="false" prefHeight="37.0" prefWidth="100.0" text="Wyczyść">
                      <font>
                         <Font size="16.0" />
                      </font>
