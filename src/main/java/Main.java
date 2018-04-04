@@ -4,12 +4,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Descriptor");
+        Locale.setDefault(new Locale("en"));
+        ResourceBundle bundle = ResourceBundle.getBundle("bundles.messages");
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/sample.fxml"), bundle);
+        primaryStage.setTitle(bundle.getString("title.aplication"));
         primaryStage.setScene(new Scene(root, 600, 800));
         primaryStage.setResizable(false);
         primaryStage.show();
