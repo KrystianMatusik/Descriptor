@@ -55,7 +55,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField fx:id="auctionNameTextField" prefHeight="22.0" prefWidth="326.0" promptText="Nazwa aukcji" GridPane.columnIndex="1">
+            <TextField fx:id="auctionNameTextField" prefHeight="22.0" prefWidth="326.0" promptText="%auctionNameTextField" GridPane.columnIndex="1">
                <font>
                   <Font size="16.0" />
                </font>
@@ -63,7 +63,7 @@
                   <Insets />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="allegroAuctionNameTextField" promptText="Nazwa aukcji allegro" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="allegroAuctionNameTextField" promptText="%allegroAuctionNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -71,7 +71,7 @@
                   <Font size="16.0" />
                </font>
             </TextField>
-            <Label fx:id="auctionNameLabel" prefHeight="22.0" prefWidth="154.0" text="Nazwa aukcji:">
+            <Label fx:id="auctionNameLabel" prefHeight="22.0" prefWidth="154.0" text="%auctionNameLabel">
                <GridPane.margin>
                   <Insets left="10.0" top="10.0" />
                </GridPane.margin>
@@ -79,7 +79,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="allegroAuctionNameLabel" prefHeight="24.0" prefWidth="169.0" text="Nazwa aukcji allegro:" GridPane.rowIndex="1">
+            <Label fx:id="allegroAuctionNameLabel" prefHeight="24.0" prefWidth="169.0" text="%allegroAuctionNameLabel" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
@@ -87,12 +87,12 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="amountLabel" text="Liczba liter" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Label fx:id="amountLabel" text="%amountLabel" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" top="10.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="productTypeLabel" text="Rodzaj produktu:" GridPane.rowIndex="3">
+            <Label fx:id="productTypeLabel" text="%productTypeLabel" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
@@ -100,7 +100,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="productTypeTextField" promptText="Rodzaj produktu" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField fx:id="productTypeTextField" promptText="%productTypeTextField" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -170,7 +170,7 @@
                   <Insets />
                </GridPane.margin>
             </HBox>
-            <Label fx:id="descriptionLabel" text="Opis:" GridPane.rowIndex="2">
+            <Label fx:id="descriptionLabel" text="%descriptionLabel" GridPane.rowIndex="2">
                <font>
                   <Font size="16.0" />
                </font>
@@ -178,7 +178,7 @@
                   <Insets left="10.0" />
                </GridPane.margin>
             </Label>
-            <TextArea fx:id="descriptionTextField" prefHeight="38.0" prefWidth="327.0" promptText="Opis produktu" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextArea fx:id="descriptionTextField" prefHeight="38.0" prefWidth="327.0" promptText="%descriptionTextField" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font size="16.0" />
                </font>

@@ -12,10 +12,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Locale.setDefault(new Locale("en"));
+        Locale.setDefault(new Locale("pl"));
         ResourceBundle bundle = ResourceBundle.getBundle("bundles.messages");
         Parent root = FXMLLoader.load(getClass().getResource("fxml/sample.fxml"), bundle);
-        primaryStage.setTitle(bundle.getString("title.aplication"));
+        primaryStage.setTitle(bundle.getString("title.application"));
         primaryStage.setScene(new Scene(root, 600, 800));
         primaryStage.setResizable(false);
         primaryStage.show();
