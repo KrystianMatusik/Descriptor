@@ -71,6 +71,11 @@
                   <Font size="16.0" />
                </font>
             </TextField>
+            <TextArea fx:id="descriptionTextField" prefHeight="38.0" prefWidth="327.0" promptText="%descriptionTextField" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextArea>
             <Label fx:id="auctionNameLabel" prefHeight="22.0" prefWidth="154.0" text="%auctionNameLabel">
                <GridPane.margin>
                   <Insets left="10.0" top="10.0" />
@@ -178,11 +183,6 @@
                   <Insets left="10.0" />
                </GridPane.margin>
             </Label>
-            <TextArea fx:id="descriptionTextField" prefHeight="38.0" prefWidth="327.0" promptText="%descriptionTextField" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </TextArea>
          </children>
          <VBox.margin>
             <Insets top="25.0" />
