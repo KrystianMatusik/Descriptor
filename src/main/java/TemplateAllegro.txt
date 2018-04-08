@@ -1,0 +1,11 @@
+﻿[iai:allegro_description_section_photo_and_text-begin]
+[iai:product_photos_large_1]
+<h1>[productTitle]</h1>
+[iai:allegro_description_section_photo_and_text-end]
+[iai:allegro_description_section_text-begin]
+<h2>Rodzaj produktu:</h2><p>[typeOfProduct]</p>
+<h2>Opis produktu:</h2><p>[productDescription]</p>
+<h2>Pojemność:</h2><p>[productCapacity]</p>
+<h2>Rodzaj włosów:</h2><p>[hairType]</p>
+<h2>O serii:</h2><p>[aboutSeries]</p>
+[iai:allegro_description_section_text-end]

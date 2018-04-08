@@ -5,6 +5,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 
 public class MainController {
     private String beginning = "Poczatkowy kod";
@@ -93,23 +98,68 @@ public class MainController {
 
     @FXML
     void openGenerateButton(ActionEvent event) {
-        auctionTextArea.setText(beginning + " " + auctionNameTextField.getText() + "\n" + descriptionTextField.getText() + "\n " + productTypeTextField.getText() + "\n");
-        if (capacityCheckBox.isSelected())
-            auctionTextArea.appendText(capacityCode + capacityTextField.getText() + "\n");
-        if (hairTypeCheckBox.isSelected())
-            auctionTextArea.appendText(hairTypeCode + hairTypeTextField.getText() + "\n");
-        if (aboutCheckBox.isSelected())
-            auctionTextArea.appendText(aboutCode + aboutTextField.getText() + "\n");
-        auctionTextArea.appendText(end);
+        try {
+            FileReader fileReader = new FileReader("Path to file");
+            BufferedReader bufferReader = new BufferedReader(fileReader);
+            String line;
+            while ((line = bufferReader.readLine()) != null) {
+                if (line.contains("[productTitle]"))
+                    line = line.replace("[productTitle]", auctionNameTextField.getText());
+                if (line.contains("[typeOfProduct]"))
+                    line = line.replace("[typeOfProduct]", productTypeTextField.getText());
+                if (line.contains("[productDescription]"))
+                    line = line.replace("[productDescription]", descriptionTextField.getText());
+                if (aboutCheckBox.isSelected() == false)
+                    line = line.replace("<div class=\"flexy-item\"><img src=\"https://zamondo.pl/data/include/cms/opis_prod/ikonki/Artboard_66.png\" alt=\"Rodzaj włosów dla których przeznaczony jest produkt kosmetyczny na Zamondo.pl\"><p class=\"long-text\"><strong>O serii:</strong>: [aboutSeries]</p>", " ");
+                else
+                    line = line.replace("[aboutSeries]", aboutTextField.getText());
+                if (hairTypeCheckBox.isSelected() == false)
+                    line = line.replace("<div class=\"flexy-item\"><img src=\"https://zamondo.pl/data/include/cms/opis_prod/ikonki/Artboard_66.png\" alt=\"Rodzaj włosów dla których przeznaczony jest produkt kosmetyczny na Zamondo.pl\"><p class=\"long-text\"><strong>Rodzaj włosów</strong>: [hairType]</p></div>", " ");
+                else
+                    line = line.replace("[hairType]", hairTypeTextField.getText());
+                if (capacityCheckBox.isSelected() == false)
+                    line = line.replace("<div class=\"flexy-item\"><img src=\"https://zamondo.pl/data/include/cms/opis_prod/ikonki/Artboard_44.png\" alt=\"Pojemność produktu kosmetycznego na Zamondo.pl\"><p class=\"long-text\"><strong>Pojemność</strong>: [productCapacity] </p></div>", "");
+                else
+                    line = line.replace("[productCapacity]", capacityTextField.getText());
+                auctionTextArea.appendText(line + "\n");
+            }
+            fileReader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        allegroAuctionTextArea.setText(beginningAllegro + "\n" + allegroAuctionNameTextField.getText() + "\n" + descriptionTextField.getText() + "\n " + productTypeTextField.getText() + "\n");
-        if (capacityCheckBox.isSelected())
-            allegroAuctionTextArea.appendText(capacityCodeAllegro + capacityTextField.getText() + "\n");
-        if (hairTypeCheckBox.isSelected())
-            allegroAuctionTextArea.appendText(hairTypeCodeAllegro + hairTypeTextField.getText() + "\n");
-        if (aboutCheckBox.isSelected())
-            allegroAuctionTextArea.appendText(aboutCodeAllegro + aboutTextField.getText() + "\n");
-        allegroAuctionTextArea.appendText(endAllegro);
-
+        try {
+            FileReader fileReader = new FileReader("Path to file");
+            BufferedReader bufferReader = new BufferedReader(fileReader);
+            String line;
+            while ((line = bufferReader.readLine()) != null) {
+                if (line.contains("[productTitle]"))
+                    line = line.replace("[productTitle]", allegroAuctionNameTextField.getText());
+                if (line.contains("[typeOfProduct]"))
+                    line = line.replace("[typeOfProduct]", productTypeTextField.getText());
+                if (line.contains("[productDescription]"))
+                    line = line.replace("[productDescription]", descriptionTextField.getText());
+                if (aboutCheckBox.isSelected() == false)
+                    line = line.replace("<h2>O serii:</h2><p>[aboutSeries]</p>", " ");
+                else
+                    line = line.replace("[aboutSeries]", aboutTextField.getText());
+                if (capacityCheckBox.isSelected() == false)
+                    line = line.replace("<h2>Pojemność:</h2><p>[productCapacity]</p>", " ");
+                else
+                    line = line.replace("[productCapacity]", capacityTextField.getText());
+                if (hairTypeCheckBox.isSelected() == false)
+                    line = line.replace("<h2>Rodzaj włosów:</h2><p>[hairType]</p>", "");
+                else
+                    line = line.replace("[hairType]", hairTypeTextField.getText());
+                allegroAuctionTextArea.appendText(line + "\n");
+            }
+            fileReader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -16,7 +16,7 @@ public class Main extends Application {
         ResourceBundle bundle = ResourceBundle.getBundle("bundles.messages");
         Parent root = FXMLLoader.load(getClass().getResource("fxml/sample.fxml"), bundle);
         primaryStage.setTitle(bundle.getString("title.application"));
-        primaryStage.setScene(new Scene(root, 600, 800));
+        primaryStage.setScene(new Scene(root, 700, 800));
         primaryStage.setResizable(false);
         primaryStage.show();
     }
