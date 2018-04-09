@@ -133,18 +133,18 @@ padding: 10px;
 <div class="circle-text">
 <p class="main-title">Produkt:</p>
 </div>
-<p class="descr-title”>
+<p class="descr-title">
 [productTitle]
 </p>
 <div class="flex-container">
 <div class="flexy-item">
 <img src="https://zamondo.pl/data/include/cms/opis_prod/ikonki/Artboard_11.png" alt="Rodzaj produktu kosmetycznego na Zamondo.pl">
-<p class="long-text"><strong>Rodzaj:</strong>[typeOfProduct]</p>
+<p class="long-text"><strong>Rodzaj: </strong>[typeOfProduct]</p>
 </div>
 
 <div class="flexy-item">
 <img src="https://zamondo.pl/data/include/cms/opis_prod/ikonki/Artboard_22.png" alt="Opis produktu kosmetycznego na Zamondo.pl">
-<p class="long-text"><strong>Opis:</strong>[productDescription] </p>
+<p class="long-text"><strong>Opis: </strong>[productDescription] </p>
 </div>
 
 <div class="flexy-item"><img src="https://zamondo.pl/data/include/cms/opis_prod/ikonki/Artboard_44.png" alt="Pojemność produktu kosmetycznego na Zamondo.pl"><p class="long-text"><strong>Pojemność</strong>: [productCapacity] </p></div>
