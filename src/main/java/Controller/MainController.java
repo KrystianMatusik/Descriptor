@@ -5,24 +5,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 
 public class MainController {
-    private String beginning = "Poczatkowy kod";
-    private String capacityCode = "Capacity code";
-    private String hairTypeCode = "Hair type";
-    private String aboutCode = "About code";
-    private String end = "End";
-
-    private String beginningAllegro = "Poczatkowy kod Allegro";
-    private String capacityCodeAllegro = "Capacity code Allegro";
-    private String hairTypeCodeAllegro = "Hair type Allegro";
-    private String aboutCodeAllegro = "About code Allegro";
-    private String endAllegro = "End Allegro";
     @FXML
     private TextField auctionNameTextField;
 
@@ -99,8 +85,9 @@ public class MainController {
     @FXML
     void openGenerateButton(ActionEvent event) {
         try {
-            FileReader fileReader = new FileReader("Path to file");
-            BufferedReader bufferReader = new BufferedReader(fileReader);
+            File fileReader = new File("C:\\Descriptor\\src\\main\\java\\Template.txt");
+            BufferedReader bufferReader = new BufferedReader(
+                    new InputStreamReader(new FileInputStream(fileReader), "UTF8"));
             String line;
             while ((line = bufferReader.readLine()) != null) {
                 if (line.contains("[productTitle]"))
@@ -123,7 +110,7 @@ public class MainController {
                     line = line.replace("[productCapacity]", capacityTextField.getText());
                 auctionTextArea.appendText(line + "\n");
             }
-            fileReader.close();
+            bufferReader.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -131,8 +118,9 @@ public class MainController {
         }
 
         try {
-            FileReader fileReader = new FileReader("Path to file");
-            BufferedReader bufferReader = new BufferedReader(fileReader);
+            File file = new File("C:\\Descriptor\\src\\main\\java\\TemplateAllegro.txt");
+            BufferedReader bufferReader = new BufferedReader(
+                    new InputStreamReader(new FileInputStream(file), "UTF8"));
             String line;
             while ((line = bufferReader.readLine()) != null) {
                 if (line.contains("[productTitle]"))
@@ -155,7 +143,7 @@ public class MainController {
                     line = line.replace("[hairType]", hairTypeTextField.getText());
                 allegroAuctionTextArea.appendText(line + "\n");
             }
-            fileReader.close();
+            bufferReader.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
