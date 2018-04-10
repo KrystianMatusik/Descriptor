@@ -84,6 +84,9 @@ public class MainController {
 
     @FXML
     void openGenerateButton(ActionEvent event) {
+        amountLabel.setText(Integer.toString(allegroAuctionNameTextField.getLength()));
+        auctionTextArea.clear();
+        allegroAuctionTextArea.clear();
         try {
             File fileReader = new File("C:\\Descriptor\\src\\main\\java\\Template.txt");
             BufferedReader bufferReader = new BufferedReader(
