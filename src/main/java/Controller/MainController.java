@@ -66,6 +66,13 @@ public class MainController {
     @FXML
     private TextArea allegroAuctionTextArea;
 
+    void deleteCharacters() {
+        String setText = "";
+        if (allegroAuctionNameTextField.getText().contains("%"))
+            setText = allegroAuctionNameTextField.getText().replace("%", "");
+        allegroAuctionNameTextField.setText(setText);
+    }
+
     @FXML
     void openClearButton(ActionEvent event) {
         auctionNameTextField.clear();
@@ -85,10 +92,11 @@ public class MainController {
     @FXML
     void openGenerateButton(ActionEvent event) {
         amountLabel.setText(Integer.toString(allegroAuctionNameTextField.getLength()));
+        deleteCharacters();
         auctionTextArea.clear();
         allegroAuctionTextArea.clear();
         try {
-            File fileReader = new File("C:\\Descriptor\\src\\main\\java\\Template.txt");
+            File fileReader = new File("E:\\IdeaProjects\\Descriptor_1\\src\\main\\java\\Template.txt");
             BufferedReader bufferReader = new BufferedReader(
                     new InputStreamReader(new FileInputStream(fileReader), "UTF8"));
             String line;
@@ -121,7 +129,7 @@ public class MainController {
         }
 
         try {
-            File file = new File("C:\\Descriptor\\src\\main\\java\\TemplateAllegro.txt");
+            File file = new File("E:\\IdeaProjects\\Descriptor_1\\src\\main\\java\\TemplateAllegro.txt");
             BufferedReader bufferReader = new BufferedReader(
                     new InputStreamReader(new FileInputStream(file), "UTF8"));
             String line;
